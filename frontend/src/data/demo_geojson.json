@@ -1,0 +1,437 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "study_id": "STUDY-DEMO-001",
+    "study_name": "Tawa River Basin Dam-Break Study",
+    "dam_name": "Tawa Hydro-Reservoir Dam",
+    "river_name": "Tawa River (Narmada Tributary)",
+    "crs": "EPSG:4326 - WGS 84",
+    "data_source": "Synthetically Modelled Hydrodynamic Benchmark for SIH26161",
+    "disclaimer": "DEMONSTRATION DATA — NOT A VERIFIED REAL-TIME FLOOD FORECAST",
+    "scenarios": [
+      {
+        "id": "SCEN-001",
+        "name": "Scenario A: Overtopping Breach (PMF Full Storage)",
+        "peak_discharge_cumec": 14200,
+        "breach_time_hrs": 1.5,
+        "max_depth_m": 8.4,
+        "max_velocity_mps": 4.8,
+        "inundated_area_sqkm": 68.4
+      },
+      {
+        "id": "SCEN-002",
+        "name": "Scenario B: Piping Failure at Normal Pool Level",
+        "peak_discharge_cumec": 8900,
+        "breach_time_hrs": 2.8,
+        "max_depth_m": 5.7,
+        "max_velocity_mps": 3.2,
+        "inundated_area_sqkm": 42.1
+      }
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "DAM-01",
+        "feature_type": "dam_structure",
+        "name": "Tawa Masonry & Earthen Dam",
+        "crest_elevation_m": 358.5,
+        "height_m": 57.9,
+        "reservoir_capacity_mcm": 2312,
+        "status": "Simulated Breach Origin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [77.8125, 22.5562]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RIVER-01",
+        "feature_type": "river_network",
+        "name": "Tawa River Mainstem",
+        "reach_length_km": 45.2,
+        "bed_slope": 0.00085,
+        "manning_roughness": 0.035
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [77.8125, 22.5562],
+          [77.8040, 22.5780],
+          [77.7880, 22.6100],
+          [77.7710, 22.6450],
+          [77.7420, 22.6850],
+          [77.7110, 22.7210],
+          [77.6740, 22.7580]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "INUND-SCEN-A-DEEP",
+        "feature_type": "inundation_zone",
+        "scenario_id": "SCEN-001",
+        "depth_class": "> 4.0 meters (Critical Danger)",
+        "hazard_level": "High Velocity & Severe Depth",
+        "fill_color": "#EF4444",
+        "arrival_time_min_hrs": 0.25,
+        "arrival_time_max_hrs": 1.8
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [77.8160, 22.5550],
+          [77.8090, 22.5800],
+          [77.7950, 22.6130],
+          [77.7790, 22.6480],
+          [77.7510, 22.6880],
+          [77.7220, 22.7230],
+          [77.6820, 22.7600],
+          [77.6680, 22.7560],
+          [77.7010, 22.7180],
+          [77.7340, 22.6810],
+          [77.7630, 22.6420],
+          [77.7810, 22.6070],
+          [77.7990, 22.5750],
+          [77.8090, 22.5540],
+          [77.8160, 22.5550]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "INUND-SCEN-A-MODERATE",
+        "feature_type": "inundation_zone",
+        "scenario_id": "SCEN-001",
+        "depth_class": "1.5 - 4.0 meters (Significant Exposure)",
+        "hazard_level": "Moderate Inundation",
+        "fill_color": "#F59E0B",
+        "arrival_time_min_hrs": 0.8,
+        "arrival_time_max_hrs": 3.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [77.8220, 22.5530],
+          [77.8150, 22.5830],
+          [77.8020, 22.6170],
+          [77.7860, 22.6530],
+          [77.7580, 22.6940],
+          [77.7290, 22.7300],
+          [77.6900, 22.7680],
+          [77.6600, 22.7620],
+          [77.6930, 22.7120],
+          [77.7260, 22.6740],
+          [77.7560, 22.6350],
+          [77.7740, 22.6000],
+          [77.7920, 22.5680],
+          [77.8030, 22.5510],
+          [77.8220, 22.5530]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "OBS-01",
+        "feature_type": "observation_point",
+        "name": "Gauge Station G-1 (Tawa Dam Tailrace)",
+        "chainage_km": 1.2,
+        "scenario_id": "SCEN-001",
+        "peak_water_depth_m": 7.8,
+        "peak_velocity_mps": 4.6,
+        "flood_arrival_hrs": 0.2,
+        "data_source": "HEC-RAS 2D Simulated Cross Section",
+        "validation_status": "Demo Scenario - Synthetically Modelled"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [77.8105, 22.5645]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "OBS-02",
+        "feature_type": "observation_point",
+        "name": "Gauge Station G-2 (Rampur Bridge Ch. 12km)",
+        "chainage_km": 12.0,
+        "scenario_id": "SCEN-001",
+        "peak_water_depth_m": 5.4,
+        "peak_velocity_mps": 3.4,
+        "flood_arrival_hrs": 0.8,
+        "data_source": "HEC-RAS 2D Simulated Cross Section",
+        "validation_status": "Demo Scenario - Synthetically Modelled"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [77.7915, 22.6080]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "OBS-03",
+        "feature_type": "observation_point",
+        "name": "Gauge Station G-3 (Pipariya Bypass Ch. 24km)",
+        "chainage_km": 24.0,
+        "scenario_id": "SCEN-001",
+        "peak_water_depth_m": 4.1,
+        "peak_velocity_mps": 2.5,
+        "flood_arrival_hrs": 1.7,
+        "data_source": "HEC-RAS 2D Simulated Cross Section",
+        "validation_status": "Demo Scenario - Synthetically Modelled"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [77.7650, 22.6510]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "OBS-04",
+        "feature_type": "observation_point",
+        "name": "Gauge Station G-4 (Sangam Confluence Ch. 42km)",
+        "chainage_km": 42.0,
+        "scenario_id": "SCEN-001",
+        "peak_water_depth_m": 2.9,
+        "peak_velocity_mps": 1.8,
+        "flood_arrival_hrs": 3.2,
+        "data_source": "HEC-RAS 2D Simulated Cross Section",
+        "validation_status": "Demo Scenario - Synthetically Modelled"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [77.7050, 22.7290]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "SETTLE-01",
+        "feature_type": "settlement",
+        "name": "Rampur Khurd Village",
+        "population": 2840,
+        "exposure_status": "Exposed",
+        "modelled_depth_m": 4.2,
+        "arrival_time_hrs": 0.7,
+        "hazard_score": "High Risk",
+        "data_source": "Survey of India + Census Demo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [77.7940, 22.6040]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "SETTLE-02",
+        "feature_type": "settlement",
+        "name": "Pipariya Downstream Ward",
+        "population": 6120,
+        "exposure_status": "Exposed",
+        "modelled_depth_m": 3.1,
+        "arrival_time_hrs": 1.6,
+        "hazard_score": "Severe Exposure",
+        "data_source": "Survey of India + Census Demo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [77.7620, 22.6480]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "SETTLE-03",
+        "feature_type": "settlement",
+        "name": "Sangam Nagar Hamlet",
+        "population": 1450,
+        "exposure_status": "Exposed",
+        "modelled_depth_m": 2.6,
+        "arrival_time_hrs": 2.9,
+        "hazard_score": "Moderate Exposure",
+        "data_source": "Survey of India + Census Demo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [77.7180, 22.7150]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "SETTLE-04",
+        "feature_type": "settlement",
+        "name": "Shrikrishna Hilltop Township",
+        "population": 4200,
+        "exposure_status": "Safe",
+        "modelled_depth_m": 0.0,
+        "arrival_time_hrs": 99.0,
+        "hazard_score": "Safe Elevated Ground",
+        "data_source": "Survey of India + Census Demo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [77.8280, 22.6320]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "INFRA-01",
+        "feature_type": "infrastructure",
+        "category": "bridge",
+        "name": "Rampur State Highway Bridge (SH-22)",
+        "exposure_status": "Exposed",
+        "modelled_depth_m": 3.8,
+        "data_source": "PWD Geo-Database",
+        "validation_status": "Demo Modelled"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [77.7900, 22.6090]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "INFRA-02",
+        "feature_type": "infrastructure",
+        "category": "hospital",
+        "name": "Pipariya Community Health Centre (CHC)",
+        "exposure_status": "Exposed",
+        "modelled_depth_m": 1.8,
+        "data_source": "Health Dept GIS Demo",
+        "validation_status": "Demo Modelled"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [77.7660, 22.6440]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "INFRA-03",
+        "feature_type": "infrastructure",
+        "category": "school",
+        "name": "Rampur Higher Secondary School",
+        "exposure_status": "Exposed",
+        "modelled_depth_m": 2.2,
+        "data_source": "Education Dept GIS",
+        "validation_status": "Demo Modelled"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [77.7970, 22.6010]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "INFRA-04",
+        "feature_type": "infrastructure",
+        "category": "power_grid",
+        "name": "132kV Pipariya Electric Substation",
+        "exposure_status": "Exposed",
+        "modelled_depth_m": 2.7,
+        "data_source": "MPPTCL Infrastructure",
+        "validation_status": "Demo Modelled"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [77.7590, 22.6530]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "SHELTER-01",
+        "feature_type": "shelter",
+        "name": "Shrikrishna Hilltop Relief Complex",
+        "capacity": 3500,
+        "elevation_m": 372.0,
+        "facilities": "Medical Outpost, Clean Water Storage, Generator Backup",
+        "status": "Designated Safe Shelter"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [77.8310, 22.6340]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "SHELTER-02",
+        "feature_type": "shelter",
+        "name": "District Stadium & Elevated Pavilion",
+        "capacity": 5000,
+        "elevation_m": 365.0,
+        "facilities": "Helipad Access, Bulk Kitchens, 100-Bed Field Hospital",
+        "status": "Designated Safe Shelter"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [77.7380, 22.7520]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "ROUTE-01",
+        "feature_type": "evacuation_route",
+        "name": "Rampur East Evacuation Corridor (Route 1A)",
+        "origin": "Rampur Khurd Village",
+        "destination": "Shrikrishna Hilltop Relief Complex",
+        "distance_km": 6.8,
+        "estimated_travel_time_min": 24,
+        "status": "Proposed — Requires Official Validation",
+        "safe_departure_window_hrs": 0.5,
+        "flood_crossing": 0,
+        "notes": "Direct eastward ascent to high ridge road. Safe if evacuated within 30 minutes of breach trigger."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [77.7940, 22.6040],
+          [77.8080, 22.6120],
+          [77.8220, 22.6230],
+          [77.8310, 22.6340]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "ROUTE-02",
+        "feature_type": "evacuation_route",
+        "name": "Pipariya North-West Ridge Pathway (Route 2B)",
+        "origin": "Pipariya Downstream Ward",
+        "destination": "District Stadium & Elevated Pavilion",
+        "distance_km": 14.5,
+        "estimated_travel_time_min": 45,
+        "status": "Proposed — Requires Official Validation",
+        "safe_departure_window_hrs": 1.2,
+        "flood_crossing": 1,
+        "notes": "Traverses minor culvert near km 4. Must cross before water depth reaches 0.3m. Escort required."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [77.7620, 22.6480],
+          [77.7510, 22.6750],
+          [77.7440, 22.7100],
+          [77.7380, 22.7520]
+        ]
+      }
+    }
+  ]
+}
